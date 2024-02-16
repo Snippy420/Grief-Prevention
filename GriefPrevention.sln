@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GriefPrevention", "GriefPrevention\GriefPrevention.csproj", "{B0D15F60-B2C9-4535-9FA6-243A19A529AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0D15F60-B2C9-4535-9FA6-243A19A529AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D15F60-B2C9-4535-9FA6-243A19A529AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D15F60-B2C9-4535-9FA6-243A19A529AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D15F60-B2C9-4535-9FA6-243A19A529AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BFD8F4A-8669-41E6-952F-14FB541DAAD8}
+	EndGlobalSection
+EndGlobal
