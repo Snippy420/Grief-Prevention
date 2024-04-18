@@ -17,31 +17,27 @@ namespace GriefPrevention.Events
 {
     public class BuildableDamaging : IEventListener<UnturnedBuildableDamagingEvent>
     {
-        private readonly IConfiguration m_Configuration;
-        private readonly bool m_enable_grief_prevention;
-        private readonly UnturnedUserDirectory m_UnturnedUserDirectory;
+        private readonly IConfiguration _Configuration;
+        private readonly bool _enable_grief_prevention;
 
-        public BuildableDamaging(IConfiguration configuration, UnturnedUserDirectory unturnedUserDirectory)
+        public BuildableDamaging(IConfiguration configuration)
         {
-            m_Configuration = configuration;
-
-            m_enable_grief_prevention = m_Configuration.GetValue<bool>("enable_grief_prevention");
-            m_UnturnedUserDirectory = unturnedUserDirectory;
+            _Configuration = configuration;
+            _enable_grief_prevention = _Configuration.GetValue<bool>("enable_grief_prevention");
         }
 
         public async Task HandleEventAsync(object sender, UnturnedBuildableDamagingEvent @event)
         {
-            if (m_enable_grief_prevention)
+            if (!_enable_grief_prevention)
             {
-                if (@event.Buildable is UnturnedBarricadeBuildable barricadeBuildable && barricadeBuildable.BarricadeDrop.interactable is InteractableFarm plant)
-                {
-                    return;
-                }
-                else
-                {
-                    @event.IsCancelled = true;
-                }
+                return;
             }
+            if (@event.Buildable is UnturnedBarricadeBuildable barricadeBuildable && barricadeBuildable.BarricadeDrop.interactable is InteractableFarm plant)
+            {
+                return;
+            }
+
+            @event.IsCancelled = true;
         }
     }
 }
